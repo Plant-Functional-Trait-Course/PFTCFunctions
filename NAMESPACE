@@ -3,6 +3,6 @@
 export(get_PFTC_envelope_codes)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,mutate)
-importFrom(dplyr,n)
+importFrom(dplyr,row_number)
 importFrom(dplyr,select)
 importFrom(tidyr,crossing)
