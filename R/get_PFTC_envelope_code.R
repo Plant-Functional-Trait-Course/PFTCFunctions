@@ -1,9 +1,10 @@
 #' @title creates unique envelope codes
 #' @description Function to create unique hashcodes (Peru: seed = 1; Svalbard: seed = 32; Chile seed = 6)
-#' @param seed
-#' @return
+#' @param seed integer seed value
+#' @return tibble with IDs
 #' @examples
-#' @importFrom dplyr mutate select %>%
+#' get_PFTC_envelope_codes(seed = 1)
+#' @importFrom dplyr mutate select %>% n
 #' @importFrom tidyr crossing
 #' @importFrom R.utils withSeed
 #' @export

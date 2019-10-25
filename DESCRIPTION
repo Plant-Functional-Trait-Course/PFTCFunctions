@@ -6,9 +6,9 @@ Author: Aud H. Halbritter [aut, cre]
 Maintainer: Aud H. Halbritter <me@audhalbritter.com>
 Depends:
 Description: This package contains useful functions for the PFTC data analysis. For example creating a unique envelope ID.
-License: What license is it under?
+License: MIT
 Encoding: UTF-8
-LazyData: FALSE
+LazyData:
 Imports: R.utils, dplyr, tidyr
 RoxygenNote: 6.1.1
 Suggests: 

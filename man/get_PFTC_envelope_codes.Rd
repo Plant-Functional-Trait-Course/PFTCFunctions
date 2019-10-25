@@ -6,6 +6,15 @@
 \usage{
 get_PFTC_envelope_codes(seed)
 }
+\arguments{
+\item{seed}{integer seed value}
+}
+\value{
+tibble with IDs
+}
 \description{
 Function to create unique hashcodes (Peru: seed = 1; Svalbard: seed = 32; Chile seed = 6)
+}
+\examples{
+get_PFTC_envelope_codes(seed = 1)
 }
