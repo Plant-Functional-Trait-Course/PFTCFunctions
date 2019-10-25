@@ -6,14 +6,14 @@
 #' get_PFTC_envelope_codes(seed = 1)
 #' @importFrom dplyr mutate select %>% n
 #' @importFrom tidyr crossing
-#' @importFrom R.utils withSeed
 #' @export
 
 get_PFTC_envelope_codes <- function(seed){
+  suppressWarnings(set.seed(seed = seed, sample.kind = "Rounding"))
   all_codes <- crossing(A = LETTERS, B = LETTERS, C = LETTERS) %>%
     mutate(code = paste0(A, B, C),
            hash = (1L:n()) %% 10000L,
-           hash = suppressWarnings(withSeed(sample(hash), seed, sample.kind = "Rounding")),
+           hash = sample(hash),
            hash = formatC(hash, width = 4, format = "d", flag = "0"),
            hashcode = paste0(code, hash)) %>%
     select(hashcode)
