@@ -55,6 +55,7 @@ vignettes/*.pdf
 *.pdf
 *.jpeg
 *.md
+!README.md
 
 
 *.DS_Store
