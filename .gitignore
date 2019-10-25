@@ -1,4 +1,72 @@
-.Rproj.user
+# History files
 .Rhistory
+.Rapp.history
+
+# Session Data files
 .RData
-.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+.Rproj.user
+
+#markdown cache
+*_cache/
+
+#drake cache
+.drake/
+
+
+#data
+*.xls
+*.csv
+*.Rdata
+!metaCH.Rdata
+!metaPE.Rdata
+!metaSV.Rdata
+!metaNO.Rdata
+!metaCO.Rdata
+!metaAll.Rdata
+!metaCommunity_CH_2012_2016.Rdata
+!metaCommunity_PE_2018.Rdata
+!metaCommunitySV_2018.Rdata
+!metaCommunityNO_2016.Rdata
+!metaCommunityCO_2016.Rdata
+*.odb
+*.zip
+*.jpg
+*.sql
+*.xlsx
+*.docx
+*.xlsx#
+*.rar
+*.sqlite
+*.dat
+*.RData.Tmp1
+*.rds
+
+#rasters & shapefiles
+*.bil
+*.blw
+*.hdr
+*.prj
+
+#figures & output
+*.png
+*.html
+*.pdf
+*.jpeg
+.my.cnf
+*.md
+
+
+*.DS_Store
