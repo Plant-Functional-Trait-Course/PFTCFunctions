@@ -4,7 +4,7 @@ Title: Functions for PFTC Data
 Version: 0.1.0
 Author: Aud H. Halbritter [aut, cre]
 Maintainer: Aud H. Halbritter <me@audhalbritter.com>
-Depends: R (>= 3.1.0)
+Depends:
 Description: This package contains useful functions for the PFTC data analysis. For example creating a unique envelope ID.
 License: What license is it under?
 Encoding: UTF-8
