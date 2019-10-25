@@ -3,6 +3,9 @@
 #' @param seed
 #' @return
 #' @examples
+#' @importFrom dplyr mutate select %>%
+#' @importFrom tidyr crossing
+#' @importFrom R.utils withSeed
 #' @export
 
 get_PFTC_envelope_codes <- function(seed){
