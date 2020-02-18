@@ -12,24 +12,36 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+
+```{r, message=FALSE, echo=FALSE}
+library("tidyverse")
+```
+
+
 # PFTCFunctions
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of PFTCFunctions is to create unique hashcodes for each individual leaf (envelope) from the Plant FUnctional Trait Course.
-Peru: seed = 1
-Svalbard: seed = 32
-Chile seed = 6
+The goal of PFTCFunctions is to create unique hashcodes for each individual leaf (envelope) from the Plant Functional Trait Course.
+
+```{r, echo = FALSE}
+data.frame(Country = c("Peru", "Peru", "Svalbard", "Peru"),
+           seed = c(1, 1, 32, 6),
+           Campaign = c("PFTC3", "Puna", "PFTC4", "PFTC5")) %>% 
+  knitr::kable()
+```
+
 
 ## Installation
 
 You can install PFTCFunctions from [GitHub](https://github.com/) with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("audhalbritter/PFTCFunctions")
+```{r, eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("audhalbritter/PFTCFunctions")
 ```
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
