@@ -4,12 +4,15 @@ Title: Functions for PFTC Data
 Version: 0.1.0
 Author: Aud H. Halbritter [aut, cre]
 Maintainer: Aud H. Halbritter <me@audhalbritter.com>
-Depends:
 Description: This package contains useful functions for the PFTC data analysis. For example creating a unique envelope ID.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData:
-Imports: R.utils, dplyr, tidyr
+Imports: 
+    R.utils,
+    dplyr,
+    tidyr,
+    rlang
 RoxygenNote: 6.1.1
 Suggests: 
     testthat (>= 2.1.0)
