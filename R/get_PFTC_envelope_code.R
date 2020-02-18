@@ -1,5 +1,5 @@
 #' @title creates unique envelope codes
-#' @description Function to create unique hashcodes (Peru: seed = 1; Svalbard: seed = 32; Chile seed = 6)
+#' @description Function to create unique hashcodes (Peru and Puna: seed = 1; Svalbard: seed = 32; Peru2 seed = 6)
 #' @param seed integer seed value
 #' @return tibble with IDs
 #' @examples
