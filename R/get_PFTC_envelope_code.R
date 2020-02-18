@@ -11,7 +11,11 @@
 #' @export
 
 get_PFTC_envelope_codes <- function(seed){
-  suppressWarnings(set.seed(seed = seed, sample.kind = "Rounding"))
+  if(getRversion() < "3.6.0") { # default seed mechanism changed in R 3.6.0. We want to use old method for consistency
+    set.seed(seed = seed)
+  } else {  
+    suppressWarnings(set.seed(seed = seed, sample.kind = "Rounding"))
+  }
   all_codes <- crossing(A = LETTERS, B = LETTERS, C = LETTERS) %>%
     mutate(code = paste0(.data$A, .data$B, .data$C),
            hash = row_number() %% 10000L,
