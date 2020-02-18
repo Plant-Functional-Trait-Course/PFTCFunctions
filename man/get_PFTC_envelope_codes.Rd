@@ -16,7 +16,7 @@ tibble with IDs
 Function to create unique hashcodes
 }
 \details{
-Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6
+Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6. Codes are not garantueed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
 }
 \examples{
 get_PFTC_envelope_codes(seed = 1)

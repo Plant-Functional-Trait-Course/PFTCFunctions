@@ -1,7 +1,7 @@
 #' @title creates unique envelope codes
 #' @description Function to create unique hashcodes
 #' @param seed integer seed value
-#' @details Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6
+#' @details Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6. Codes are not garantueed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
 #' @return tibble with IDs
 #' @examples
 #' get_PFTC_envelope_codes(seed = 1)
@@ -13,7 +13,7 @@
 get_PFTC_envelope_codes <- function(seed){
   if(getRversion() < "3.6.0") { # default seed mechanism changed in R 3.6.0. We want to use old method for consistency
     set.seed(seed = seed)
-  } else {  
+  } else {
     suppressWarnings(set.seed(seed = seed, sample.kind = "Rounding"))
   }
   all_codes <- crossing(A = LETTERS, B = LETTERS, C = LETTERS) %>%
@@ -26,3 +26,27 @@ get_PFTC_envelope_codes <- function(seed){
   return(all_codes)
 }
 
+
+
+
+
+#' @title unique envelope codes across seeds
+#' @description Function checking that enveloope codes (hashcodes) are unique across seeds. And it selects away non unique codes.
+#' @param newseed integer newseed value
+#' @param oldseeds integer oldseeds value
+#' @return tibble with IDs
+#' @examples
+#' unique_PFTC_envelope_codes(newseed = 1, oldseeds = 32)
+#' @importFrom dplyr anti_join %>%
+#' @importFrom purrr map_df
+#' @export
+
+
+unique_PFTC_envelope_codes <- function(newseed, oldseeds){
+
+  oldhash <- map_df(oldseeds, get_PFTC_envelope_codes)
+  uniqueIDs <- get_PFTC_envelope_codes(newseed) %>%
+    anti_join(oldhash, by = "hashcode")
+
+  return(uniqueIDs)
+}
