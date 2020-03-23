@@ -4,8 +4,8 @@
 #' @param datatype name of datatype
 #' @param path path for downloaded files
 #' @importFrom readr read_csv
-#' @importFrom dyplr filter select
-#' @importFrom purl pwalk
+#' @importFrom dplyr filter select %>%
+#' @importFrom purrr pwalk
 #' @importFrom dataDownloader get_file
 #' @export
 
@@ -49,9 +49,4 @@ download_PFTC_data <- function(country, datatype, path){
 
   }, path = path)
 }
-
-download_PFTC_data(country = c("China", "Peru"), datatype = "trait", path = "output")
-
-
-
 
