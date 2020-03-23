@@ -14,5 +14,6 @@
 "location"
 
 #' @examples
-#' require("data/location")
-#' location %>% select(Country, DataType)
+#' require("dplyr")
+#' data("location")
+#' location %>% select(Country, DataType) %>% View()
