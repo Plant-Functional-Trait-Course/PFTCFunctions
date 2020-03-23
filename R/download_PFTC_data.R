@@ -16,7 +16,7 @@ download_PFTC_data <- function(country, datatype, path){
   if(missing(country)) {stop("Country needed")}
 
   # load location file
-  location <- read_csv(file = "data/LocationOfPFTCData.csv")
+  location <- read_csv(file = "data-raw/LocationOfPFTCData.csv")
 
   # select data
   location <- location %>%
