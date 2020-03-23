@@ -7,7 +7,7 @@ Maintainer: Aud H. Halbritter <me@audhalbritter.com>
 Description: This package contains useful functions for the PFTC data analysis. For example creating a unique envelope ID.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData:
+LazyData: true
 Imports: 
     R.utils,
     dplyr,
