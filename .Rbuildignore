@@ -3,4 +3,4 @@
 ^README\.Rmd$
 ^LICENSE\.md$
 ^data-raw$
-^doutput$
+^output$
