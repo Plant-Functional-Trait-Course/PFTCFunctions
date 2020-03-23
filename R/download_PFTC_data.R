@@ -3,7 +3,6 @@
 #' @param country name of country
 #' @param datatype name of datatype
 #' @param path path for downloaded files
-#' @importFrom readr read_csv
 #' @importFrom dplyr filter select %>%
 #' @importFrom purrr pwalk
 #' @importFrom dataDownloader get_file
@@ -16,23 +15,23 @@ download_PFTC_data <- function(country, datatype, path){
   if(missing(country)) {stop("Country needed")}
 
   # load location file
-  location <- read_csv(file = "data-raw/LocationOfPFTCData.csv")
+  location <- get(load(file = "data/location.rda"))
 
   # select data
   location <- location %>%
-    filter(Country %in% {{country}})
+    filter(.data$Country %in% {{country}})
 
   if(missing(datatype)){
     location <- location %>%
-      filter(DataType %in% c("community", "trait"))
+      filter(.data$DataType %in% c("community", "trait"))
 
   } else {
     location <- location %>%
-      filter(DataType == {{datatype}})
+      filter(.data$DataType == {{datatype}})
   }
 
   location <- location %>%
-    select(-Country, -DataType, -Remark)
+    select(-.data$Country, -.data$DataType, -.data$Remark)
 
   print(location)
   # download data
