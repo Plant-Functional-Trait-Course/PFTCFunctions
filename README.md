@@ -36,3 +36,41 @@ all_codes <- get_PFTC_envelope_codes(seed = 1)
 all_codes$hashcode[1:5]
 #> [1] "AAA4667" "AAB6541" "AAC0068" "AAD5960" "AAE3544"
 ```
+
+Location of data
+----------------
+
+| Country  | DataType      | Remark                                        |
+|:---------|:--------------|:----------------------------------------------|
+| China    | community     | NA                                            |
+| China    | metaCommunity | NA                                            |
+| China    | trait         | Full leaf trait data set from PFTC1 and 2     |
+| China    | trait         | Full chemical trait data set from PFTC1 and 2 |
+| China    | trait\_Henn   | Trait data set used in Henn et al. 2018       |
+| China    | biomass       | NA                                            |
+| China    | flux          | NA                                            |
+| China    | meta          | NA                                            |
+| China    | climate       | Climate data from iButtons                    |
+| China    | climate       | Monthly climate data from iButtons            |
+| China    | climate       | Climate data from Tomst Logger                |
+| China    | climate       | Climate data from weather station             |
+| Peru     | community     | NA                                            |
+| Peru     | metaCommunity | NA                                            |
+| Peru     | trait         | NA                                            |
+| Peru     | flux          | NA                                            |
+| Peru     | meta          | NA                                            |
+| Svalbard | community     | NA                                            |
+| Svalbard | community     | NA                                            |
+| Svalbard | trait         | NA                                            |
+| Svalbard | flux          | NA                                            |
+| Svalbard | meta          | NA                                            |
+| Norway   | community     | NA                                            |
+| Norway   | metaCommunity | NA                                            |
+| Norway   | trait         | NA                                            |
+| Norway   | flux          | NA                                            |
+| Norway   | meta          | NA                                            |
+| Colorado | community     | NA                                            |
+| Colorado | metaCommunity | NA                                            |
+| Colorado | trait         | NA                                            |
+| Colorado | flux          | NA                                            |
+| Colorado | meta          | NA                                            |

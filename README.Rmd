@@ -53,3 +53,14 @@ all_codes <- get_PFTC_envelope_codes(seed = 1)
 all_codes$hashcode[1:5]
 ```
 
+
+
+## Location of data
+
+```{r, echo = FALSE}
+data("location")
+
+location %>% 
+  select(Country, DataType, Remark) %>% 
+  knitr::kable()
+```
