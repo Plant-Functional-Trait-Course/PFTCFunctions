@@ -1,7 +1,7 @@
 Package: PFTCFunctions
 Type: Package
 Title: Functions for PFTC Data
-Version: 0.1.0
+Version: 0.1.1
 Author: Aud H. Halbritter [aut, cre]
 Maintainer: Aud H. Halbritter <me@audhalbritter.com>
 Description: This package contains useful functions for the PFTC data analysis. For example creating a unique envelope ID.
