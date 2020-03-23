@@ -1,22 +1,57 @@
-library("tidyverse")
-library("dataDownloader")
+#' @title download PFTC data
+#' @description Function to download PFTC data
+#' @param country name of country
+#' @param datatype name of datatype
+#' @param path path for downloaded files
+#' @importFrom readr read_csv
+#' @importFrom dyplr filter select
+#' @importFrom purl pwalk
+#' @importFrom dataDownloader get_file
+#' @export
 
 
-download_PFTC_data <- function(country, datatype, path, downloadAll = FALSE){
+download_PFTC_data <- function(country, datatype, path){
+
+  # warning if country is missing
+  if(missing(country)) {stop("Country needed")}
 
   # load location file
   location <- read_csv(file = "data/LocationOfPFTCData.csv")
 
   # select data
   location <- location %>%
-    filter(Country == country, DataType == datatype)
+    filter(Country %in% {{country}})
 
+  if(missing(datatype)){
+    location <- location %>%
+      filter(DataType %in% c("community", "trait"))
+
+  } else {
+    location <- location %>%
+      filter(DataType == {{datatype}})
+  }
+
+  location <- location %>%
+    select(-Country, -DataType, -Remark)
+
+  print(location)
   # download data
-  get_file(node = location$node,
-           remote_path = location$remote_path,
-           file = location$file,
-           path = path)
+  #pwalk(.l = location, .f = get_file, path = path)
+  pwalk(location, function(remote_path, ...){
 
+    if(is.na(remote_path) | remote_path == "") {
+
+      remote_path <- NULL
+
+    }
+
+    get_file(remote_path, ...)
+
+  }, path = path)
 }
 
-download_PFTC_data(country = "Peru", datatype = "community", path = "output")
+download_PFTC_data(country = c("China", "Peru"), datatype = "trait", path = "output")
+
+
+
+
