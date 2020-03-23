@@ -22,40 +22,7 @@ vignettes/*.pdf
 #markdown cache
 *_cache/
 
-#drake cache
-.drake/
-
-
-#data
-*.xls
-*.csv
-*.Rdata
-*.odb
-*.zip
-*.jpg
-*.sql
-*.xlsx
-*.docx
-*.xlsx#
-*.rar
-*.sqlite
-*.dat
-*.RData.Tmp1
-*.rds
-
-#rasters & shapefiles
-*.bil
-*.blw
-*.hdr
-*.prj
-
-#figures & output
-*.png
-*.html
-*.pdf
-*.jpeg
-*.md
-!README.md
-
+# file
+output/
 
 *.DS_Store
