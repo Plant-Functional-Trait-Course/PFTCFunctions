@@ -8,6 +8,8 @@ Description: This package contains useful functions for the PFTC data analysis. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/Plant-Functional-Trait-Course/PFTCFunctions
+Bugs: https://github.com/Plant-Functional-Trait-Course/PFTCFunctions/issues
 Imports: 
     R.utils,
     dplyr,
@@ -15,8 +17,10 @@ Imports:
     rlang,
     purrr,
     readr,
-    dataDownloader
+    dataDownloader (>= 0.0.0.9000)
 RoxygenNote: 6.1.1
 Depends: R (>= 2.10)
 Suggests: 
     testthat (>= 2.1.0)
+Remotes:  
+    Between-the-Fjords/downloader
