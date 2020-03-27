@@ -1,12 +1,11 @@
 Country,DataType,node,file,remote_path,Remark
-China,community,4hjzu,transplant.sqlite,,
-China,metaCommunity,4hjzu,metaCommunity_CH_2012_2016.Rdata,,
-China,trait,emzgf,PFTC1.2_China_2015_2016_LeafTraits.csv,,Full leaf trait data set from PFTC1 and 2
-China,trait,emzgf,PFTC1.2_China_2015_2016_ChemicalTraits.csv,,Full chemical trait data set from PFTC1 and 2
-China,trait_Henn,emzgf,traits.RData,,Trait data set used in Henn et al. 2018
-China,biomass,f3knq,biomass2015.xls,RawData,
-China,flux,f3knq,standardControlFluxCH_2016.Rdata,,
-China,meta,f3knq,metaCH.csv,,
+China,community,f3knq,transplant.sqlite,Community,
+China,trait,f3knq,PFTC1.2_China_2015_2016_LeafTraits.csv,Traits,Full leaf trait data set from PFTC1 and 2
+China,trait,f3knq,PFTC1.2_China_2015_2016_ChemicalTraits.csv,Traits,Full chemical trait data set from PFTC1 and 2
+China,trait_Henn,emzgf,traits.RData,,Trait data set used for Henn et al. 2018
+China,biomass,f3knq,China_2016_Biomass_cleanded.csv,Biomass,
+China,flux,f3knq,standardControlFluxCH_2016.Rdata,C-Flux,
+China,meta,f3knq,metaCH.csv,Meta Data,
 China,climate,f3knq,China_2019_TemperatureiButton.csv,Climate,Climate data from iButtons
 China,climate,f3knq,China_2019_Monthly_TemperatureiButton.csv,Climate,Monthly climate data from iButtons
 China,climate,f3knq,China_2019_Climate_TomstLogger.csv,Climate,Climate data from Tomst Logger
