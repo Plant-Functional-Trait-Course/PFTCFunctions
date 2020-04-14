@@ -10,13 +10,13 @@
 #' @export
 
 
-download_PFTC_data <- function(country, datatype, path){
+download_PFTC_data <- function(country, datatype, path = "."){
 
   # warning if country is missing
   if(missing(country)) {stop("Country needed")}
 
   # load location file
-  location <- data("location", package = "PFTCFunctions", envir = environment())
+  data("location", package = "PFTCFunctions", envir = environment())
 
   # select data
   location <- location %>%

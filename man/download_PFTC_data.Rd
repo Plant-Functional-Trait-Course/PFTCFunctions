@@ -4,7 +4,7 @@
 \alias{download_PFTC_data}
 \title{download PFTC data}
 \usage{
-download_PFTC_data(country, datatype, path)
+download_PFTC_data(country, datatype, path = ".")
 }
 \arguments{
 \item{country}{name of country}
