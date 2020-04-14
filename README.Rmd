@@ -39,7 +39,7 @@ You can install PFTCFunctions from [GitHub](https://github.com/) with:
 
 ```{r, eval = FALSE}
 # install.packages("remotes")
-remotes::install_github("audhalbritter/PFTCFunctions")
+remotes::install_github("Plant-Functional-Trait-Course//PFTCFunctions")
 ```
 
 ## Example
@@ -55,12 +55,12 @@ all_codes$hashcode[1:5]
 
 
 
-## Location of data
+## Location of PFTC data
 
 ```{r, echo = FALSE}
-data("location")
+data("PFTC_data_location")
 
-location %>% 
+PFTC_data_location %>% 
   select(Country, DataType, Remark) %>% 
   knitr::kable()
 ```
