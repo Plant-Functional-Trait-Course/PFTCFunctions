@@ -15,29 +15,28 @@ download_PFTC_data <- function(country, datatype, path = "."){
   # warning if country is missing
   if(missing(country)) {stop("Country needed")}
 
-  # load location file
-  data("location", package = "PFTCFunctions", envir = environment())
+  # load PFTC_data_location file
+  data("PFTC_data_location", package = "PFTCFunctions", envir = environment())
 
   # select data
-  location <- location %>%
+  PFTC_data_location <- PFTC_data_location %>%
     filter(.data$Country %in% {{country}})
 
   if(missing(datatype)){
-    location <- location %>%
+    PFTC_data_location <- PFTC_data_location %>%
       filter(.data$DataType %in% c("community", "trait"))
 
   } else {
-    location <- location %>%
+    PFTC_data_location <- PFTC_data_location %>%
       filter(.data$DataType == {{datatype}})
   }
 
-  location <- location %>%
+  PFTC_data_location <- PFTC_data_location %>%
     select(-.data$Country, -.data$DataType, -.data$Remark)
 
-  print(location)
+  print(PFTC_data_location)
   # download data
-  #pwalk(.l = location, .f = get_file, path = path)
-  pwalk(location, function(remote_path, ...){
+  pwalk(PFTC_data_location, function(remote_path, ...){
 
     if(is.na(remote_path) | remote_path == "") {
 

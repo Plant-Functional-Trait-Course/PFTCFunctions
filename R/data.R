@@ -1,4 +1,4 @@
-#' Location file
+#' PFTC_data_location file
 #'
 #' A dataset containing the data type and location of the data sets
 #'
@@ -11,9 +11,9 @@
 #'   \item{remote_path}{remot path name}
 #'   \item{Remark}{remark name}
 #' }
-"location"
+"PFTC_data_location"
 
 #' @examples
 #' require("dplyr")
-#' data("location")
-#' location %>% select(Country, DataType) %>% View()
+#' data("PFTC_data_location")
+#' PFTC_data_location %>% select(Country, DataType) %>% View()
