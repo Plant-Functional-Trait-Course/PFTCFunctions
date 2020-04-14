@@ -15,7 +15,7 @@ download_PFTC_data <- function(country, datatype, path){
   if(missing(country)) {stop("Country needed")}
 
   # load location file
-  location <- get(load(file = "data/location.rda"))
+  location <- data(location, package = "PFTCFunctions")
 
   # select data
   location <- location %>%
