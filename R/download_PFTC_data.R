@@ -6,6 +6,7 @@
 #' @importFrom dplyr filter select %>%
 #' @importFrom purrr pwalk
 #' @importFrom dataDownloader get_file
+#' @importFrom utils data
 #' @export
 
 
@@ -15,7 +16,7 @@ download_PFTC_data <- function(country, datatype, path){
   if(missing(country)) {stop("Country needed")}
 
   # load location file
-  location <- data(location, package = "PFTCFunctions")
+  location <- data("location", package = "PFTCFunctions", envir = environment())
 
   # select data
   location <- location %>%
