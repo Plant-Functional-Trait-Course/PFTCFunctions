@@ -23,7 +23,7 @@ You can install PFTCFunctions from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("Plant-Functional-Trait-Course//PFTCFunctions")
+remotes::install_github("Plant-Functional-Trait-Course/PFTCFunctions")
 ```
 
 ## Example
