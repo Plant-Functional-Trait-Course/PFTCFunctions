@@ -4,8 +4,7 @@
 \name{PFTC_data_location}
 \alias{PFTC_data_location}
 \title{PFTC_data_location file}
-\format{
-A data frame with 32 rows and 6 variables:
+\format{A data frame with 32 rows and 6 variables:
 \describe{
   \item{Country}{country name}
   \item{DataType}{data type name}
@@ -13,8 +12,7 @@ A data frame with 32 rows and 6 variables:
   \item{file}{file name}
   \item{remote_path}{remot path name}
   \item{Remark}{remark name}
-}
-}
+}}
 \usage{
 PFTC_data_location
 }
