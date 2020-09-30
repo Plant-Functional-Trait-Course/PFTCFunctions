@@ -18,7 +18,7 @@ Imports:
     purrr,
     readr,
     dataDownloader (>= 0.0.0.9000)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Depends: R (>= 2.10)
 Suggests: 
     testthat (>= 2.1.0)
