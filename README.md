@@ -1,34 +1,46 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # PFTCFunctions
 
-<!-- badges: start -->
+**PFTCFunctions** is a collection of R functions used to collect plant
+functional traits during the Plant Functional Trait Course (PFTC). The
+trait data collection is organized in multiple stations where different
+traits are measured, and we call it the trait wheel (see figure below).
 
-<!-- badges: end -->
+<img src="R/TraitWheel_small.png" title="The different stages from collection, processing and curating data from the trait wheel." alt="The different stages from collection, processing and curating data from the trait wheel." width="100%" />
 
-The goal of PFTCFunctions is to create unique hashcodes for each
-individual leaf (envelope) from the Plant Functional Trait Course.
-
-| Country  | seed | Campaign |
-| :------- | ---: | :------- |
-| Peru     |    1 | PFTC3    |
-| Peru     |    1 | Puna     |
-| Svalbard |   32 | PFTC4    |
-| Peru     |    6 | PFTC5    |
+The package contains the following: - download_PFTC_data -
+get_PFTC_envelope_code - make_barcode_labels
 
 ## Installation
 
-You can install PFTCFunctions from [GitHub](https://github.com/) with:
+Install **PFTCFunctions** from [GitHub](https://github.com/) using the
+following code:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("Plant-Functional-Trait-Course/PFTCFunctions")
 ```
 
-## Example
+## Download PFTC data
 
-This is a basic example which shows you how to solve a common problem:
+to be added
+
+## Make unique envelope codes
+
+The function *get_PFTC_envelope_code* creates unique hashcodes, which we
+use as unique IDs for each individual leaf. The codes are randomly
+created using a specific seed for each course (see table below) and
+contain 3 letters followed by 4 numbers.
+
+| Country  | seed | Campaign |
+|:---------|-----:|:---------|
+| Peru     |    1 | PFTC3    |
+| Peru     |    1 | Puna     |
+| Svalbard |   32 | PFTC4    |
+| Peru     |    6 | PFTC5    |
+| Norway   |   49 | PFTC6    |
+
+This is how to use the function:
 
 ``` r
 library(PFTCFunctions)
@@ -38,39 +50,21 @@ all_codes$hashcode[1:5]
 #> [1] "AAA4667" "AAB6541" "AAC0068" "AAD5960" "AAE3544"
 ```
 
-## Location of PFTC data
+## Make barcode labels
 
-| Country  | DataType      | Remark                                        |
-| :------- | :------------ | :-------------------------------------------- |
-| China    | community     | NA                                            |
-| China    | trait         | Full leaf trait data set from PFTC1 and 2     |
-| China    | trait         | Full chemical trait data set from PFTC1 and 2 |
-| China    | trait\_Henn   | Trait data set used for Henn et al. 2018      |
-| China    | biomass       | NA                                            |
-| China    | flux          | NA                                            |
-| China    | meta          | NA                                            |
-| China    | climate       | Climate data from iButtons                    |
-| China    | climate       | Monthly climate data from iButtons            |
-| China    | climate       | Climate data from Tomst Logger                |
-| China    | climate       | Climate data from weather station             |
-| China    | climate       | Climate data for Yan et al. 2018              |
-| Peru     | community     | NA                                            |
-| Peru     | metaCommunity | NA                                            |
-| Peru     | trait         | NA                                            |
-| Peru     | flux          | NA                                            |
-| Peru     | meta          | NA                                            |
-| Svalbard | community     | NA                                            |
-| Svalbard | community     | NA                                            |
-| Svalbard | trait         | NA                                            |
-| Svalbard | flux          | NA                                            |
-| Svalbard | meta          | NA                                            |
-| Norway   | community     | NA                                            |
-| Norway   | metaCommunity | NA                                            |
-| Norway   | trait         | NA                                            |
-| Norway   | flux          | NA                                            |
-| Norway   | meta          | NA                                            |
-| Colorado | community     | NA                                            |
-| Colorado | metaCommunity | NA                                            |
-| Colorado | trait         | NA                                            |
-| Colorado | flux          | NA                                            |
-| Colorado | meta          | NA                                            |
+The *make_barcode_labels* function creates a PDF with barcodes from the
+unique IDs with can then be printed on stickers.
+
+In the trait wheel, each sampled leaf gets an ID and is put into an
+envelope for further processing. To avoid errors and simplify the
+process, we make barcodes from the unique IDs and produce stickers,
+which are put on the envelopes (see picture below).
+
+We use the following label type: Avery or Herma 45.7 x 21.2 mm, 48
+stickers per page For example see
+[here](https://www.lyreco.com/webshop/NONO/etiketter-avery-45-7-x-21-2-mm-hvit-eske-c3a0-960-stk-product-000000000002760191.html).
+
+<img src="R/envelope.png" title="Envelope with a barcode sticker." alt="Envelope with a barcode sticker." width="50%" />
+
+Other types and sizes of labels can be used, but the function has to be
+adapted.
