@@ -17,7 +17,8 @@ Imports:
     rlang,
     purrr,
     readr,
-    dataDownloader (>= 0.0.0.9000)
+    dataDownloader (>= 0.0.0.9000),
+    baRcodeR
 RoxygenNote: 7.1.1
 Depends: R (>= 2.10)
 Suggests: 
