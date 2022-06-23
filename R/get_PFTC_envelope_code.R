@@ -1,7 +1,8 @@
 #' @title creates unique envelope codes
 #' @description Function to create unique hashcodes
 #' @param seed integer seed value
-#' @details Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6. Codes are not garantueed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
+#' @param as.3.5 logical using 3.5 version or not
+#' @details Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6, PFTC6 = 49 + as.3.5 = FALSE. Codes are not guaranteed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
 #' @return tibble with IDs
 #' @examples
 #' get_PFTC_envelope_codes(seed = 1)
