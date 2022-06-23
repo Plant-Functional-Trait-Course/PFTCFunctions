@@ -10,9 +10,11 @@
 #' @importFrom rlang .data
 #' @export
 
-get_PFTC_envelope_codes <- function(seed){
-  if(getRversion() < "3.6.0") { # default seed mechanism changed in R 3.6.0. We want to use old method for consistency
+get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE){
+  if (getRversion() < "3.6.0") { # default seed mechanism changed in R 3.6.0. We want to use old method for consistency
     set.seed(seed = seed)
+  } else if (isFALSE(as.3.5)){ #
+    suppressWarnings(set.seed(seed = seed, sample.kind = "Rejection"))
   } else {
     suppressWarnings(set.seed(seed = seed, sample.kind = "Rounding"))
   }
