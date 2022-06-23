@@ -40,6 +40,9 @@ contain 3 letters followed by 4 numbers.
 | Peru     |    6 | PFTC5    | TRUE   |
 | Norway   |   49 | PFTC6    | FALSE  |
 
+The as.3.5 decides if using R \> 3.5 if to use the old or new sample
+method. Note that for PFTC6, as.3.5 needs to be FALSE.
+
 This is how to use the function:
 
 ``` r
