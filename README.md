@@ -32,13 +32,13 @@ use as unique IDs for each individual leaf. The codes are randomly
 created using a specific seed for each course (see table below) and
 contain 3 letters followed by 4 numbers.
 
-| Country  | seed | Campaign |
-|:---------|-----:|:---------|
-| Peru     |    1 | PFTC3    |
-| Peru     |    1 | Puna     |
-| Svalbard |   32 | PFTC4    |
-| Peru     |    6 | PFTC5    |
-| Norway   |   49 | PFTC6    |
+| Country  | seed | Campaign | as.3.5 |
+|:---------|-----:|:---------|:-------|
+| Peru     |    1 | PFTC3    | TRUE   |
+| Peru     |    1 | Puna     | TRUE   |
+| Svalbard |   32 | PFTC4    | TRUE   |
+| Peru     |    6 | PFTC5    | TRUE   |
+| Norway   |   49 | PFTC6    | FALSE  |
 
 This is how to use the function:
 
