@@ -8,31 +8,31 @@
 #' @return PDF with barcodes from IDs
 #' @examples
 #' \dontrun{
-#' if(require(baRcodeR)) { # needs baRcodeR package installed
+#' if (require(baRcodeR)) { # needs baRcodeR package installed
 #'   myIDs <- head(get_PFTC_envelope_codes(seed = 42))
 #'   file <- tempfile(fileext = ".pdf")
-#'    make_barcode_labels(uniqueID = myIDs, filename = file)
-#'    unlink(file)
+#'   make_barcode_labels(uniqueID = myIDs, filename = file)
+#'   unlink(file)
 #' }
 #' }
 #' @export
 
 
-make_barcode_labels <- function(uniqueID, filename){
-
-  baRcodeR::custom_create_PDF(Labels = uniqueID$hashcode,
-                    name = filename,
-                    type = "linear",
-                    Fsz = 14,
-                    Across = TRUE,
-                    trunc = TRUE,
-                    numrow = 12,
-                    numcol = 4,
-                    page_width = 8.3,
-                    page_height = 11.7,
-                    width_margin = 0.2,
-                    height_margin = 0.7,
-                    label_width = 1.811,
-                    label_height = 0.5)
-
+make_barcode_labels <- function(uniqueID, filename) {
+  baRcodeR::custom_create_PDF(
+    Labels = uniqueID$hashcode,
+    name = filename,
+    type = "linear",
+    Fsz = 14,
+    Across = TRUE,
+    trunc = TRUE,
+    numrow = 12,
+    numcol = 4,
+    page_width = 8.3,
+    page_height = 11.7,
+    width_margin = 0.2,
+    height_margin = 0.7,
+    label_width = 1.811,
+    label_height = 0.5
+  )
 }

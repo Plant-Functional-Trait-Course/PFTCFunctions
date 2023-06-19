@@ -24,11 +24,11 @@ the uniqueID dataframe can be created using this code \code{unique_PFTC_envelope
 }
 \examples{
 \dontrun{
-if(require(baRcodeR)) { # needs baRcodeR package installed
+if (require(baRcodeR)) { # needs baRcodeR package installed
   myIDs <- head(get_PFTC_envelope_codes(seed = 42))
   file <- tempfile(fileext = ".pdf")
-   make_barcode_labels(uniqueID = myIDs, filename = file)
-   unlink(file)
+  make_barcode_labels(uniqueID = myIDs, filename = file)
+  unlink(file)
 }
 }
 }

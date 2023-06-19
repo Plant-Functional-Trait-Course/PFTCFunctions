@@ -16,4 +16,6 @@
 #' @examples
 #' require("dplyr")
 #' data("PFTC_data_location")
-#' PFTC_data_location %>% select(Country, DataType) %>% View()
+#' PFTC_data_location %>%
+#'   select(Country, DataType) %>%
+#'   View()
