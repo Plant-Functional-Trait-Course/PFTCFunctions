@@ -11,20 +11,22 @@
 #' @importFrom rlang .data
 #' @export
 
-get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE){
+get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE) {
   if (getRversion() < "3.6.0") { # default seed mechanism changed in R 3.6.0. We want to use old method for consistency
     set.seed(seed = seed)
-  } else if (isFALSE(as.3.5)){ #
+  } else if (isFALSE(as.3.5)) { #
     suppressWarnings(set.seed(seed = seed, sample.kind = "Rejection"))
   } else {
     suppressWarnings(set.seed(seed = seed, sample.kind = "Rounding"))
   }
   all_codes <- crossing(A = LETTERS, B = LETTERS, C = LETTERS) %>%
-    mutate(code = paste0(.data$A, .data$B, .data$C),
-           hash = row_number() %% 10000L,
-           hash = sample(.data$hash),
-           hash = formatC(.data$hash, width = 4, format = "d", flag = "0"),
-           hashcode = paste0(.data$code, .data$hash)) %>%
+    mutate(
+      code = paste0(.data$A, .data$B, .data$C),
+      hash = row_number() %% 10000L,
+      hash = sample(.data$hash),
+      hash = formatC(.data$hash, width = 4, format = "d", flag = "0"),
+      hashcode = paste0(.data$code, .data$hash)
+    ) %>%
     select(.data$hashcode)
   return(all_codes)
 }
@@ -34,10 +36,11 @@ get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE){
 
 
 #' @title unique envelope codes across seeds
-#' @description Function checking that enveloope codes (hashcodes) are unique across seeds. And it selects away non unique codes.
+#' @description Function checking that envelope codes (hashcodes) are unique across seeds.
+#' It selects away non unique codes.
 #' @param newseed integer newseed value
 #' @param oldseeds integer oldseeds value
-#' @return tibble with IDs
+#' @return tibble with unique IDs
 #' @examples
 #' unique_PFTC_envelope_codes(newseed = 1, oldseeds = 32)
 #' @importFrom dplyr anti_join %>%
@@ -45,8 +48,7 @@ get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE){
 #' @export
 
 
-unique_PFTC_envelope_codes <- function(newseed, oldseeds){
-
+unique_PFTC_envelope_codes <- function(newseed, oldseeds) {
   oldhash <- map_df(oldseeds, get_PFTC_envelope_codes)
   uniqueIDs <- get_PFTC_envelope_codes(newseed) %>%
     anti_join(oldhash, by = "hashcode")

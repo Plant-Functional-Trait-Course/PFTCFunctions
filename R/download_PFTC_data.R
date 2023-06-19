@@ -10,25 +10,25 @@
 #' @export
 
 
-download_PFTC_data <- function(country, datatype, path = "."){
-
+download_PFTC_data <- function(country, datatype, path = ".") {
   # warning if country is missing
-  if(missing(country)) {stop("Country needed")}
+  if (missing(country)) {
+    stop("Country needed")
+  }
 
   # load PFTC_data_location file
   data("PFTC_data_location", package = "PFTCFunctions", envir = environment())
 
   # select data
   PFTC_data_location <- PFTC_data_location %>%
-    filter(.data$Country %in% {{country}})
+    filter(.data$Country %in% {{ country }})
 
-  if(missing(datatype)){
+  if (missing(datatype)) {
     PFTC_data_location <- PFTC_data_location %>%
       filter(.data$DataType %in% c("community", "trait"))
-
   } else {
     PFTC_data_location <- PFTC_data_location %>%
-      filter(.data$DataType == {{datatype}})
+      filter(.data$DataType == {{ datatype }})
   }
 
   PFTC_data_location <- PFTC_data_location %>%
@@ -36,16 +36,11 @@ download_PFTC_data <- function(country, datatype, path = "."){
 
   print(PFTC_data_location)
   # download data
-  pwalk(PFTC_data_location, function(remote_path, ...){
-
-    if(is.na(remote_path) | remote_path == "") {
-
+  pwalk(PFTC_data_location, function(remote_path, ...) {
+    if (is.na(remote_path) | remote_path == "") {
       remote_path <- NULL
-
     }
 
     get_file(remote_path, ...)
-
   }, path = path)
 }
-

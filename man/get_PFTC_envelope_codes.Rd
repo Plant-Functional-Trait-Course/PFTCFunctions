@@ -4,10 +4,12 @@
 \alias{get_PFTC_envelope_codes}
 \title{creates unique envelope codes}
 \usage{
-get_PFTC_envelope_codes(seed)
+get_PFTC_envelope_codes(seed, as.3.5 = TRUE)
 }
 \arguments{
 \item{seed}{integer seed value}
+
+\item{as.3.5}{logical using 3.5 version or not}
 }
 \value{
 tibble with IDs
@@ -16,7 +18,7 @@ tibble with IDs
 Function to create unique hashcodes
 }
 \details{
-Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6. Codes are not garantueed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
+Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6, PFTC6 = 49 + as.3.5 = FALSE. Codes are not guaranteed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
 }
 \examples{
 get_PFTC_envelope_codes(seed = 1)

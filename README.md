@@ -6,7 +6,15 @@ functional traits during the Plant Functional Trait Course (PFTC). The
 trait data collection is organized in multiple stations where different
 traits are measured, and we call it the trait wheel (see figure below).
 
-<img src="R/TraitWheel_small.png" title="The different stages from collection, processing and curating data from the trait wheel." alt="The different stages from collection, processing and curating data from the trait wheel." width="100%" />
+<div class="figure">
+
+<img src="R/TraitWheel_small.png" alt="The different stages from collection, processing and curating data from the trait wheel." width="100%" />
+<p class="caption">
+The different stages from collection, processing and curating data from
+the trait wheel.
+</p>
+
+</div>
 
 The package contains the following: - download_PFTC_data -
 get_PFTC_envelope_code - make_barcode_labels
@@ -67,7 +75,14 @@ We use the following label type: Avery or Herma 45.7 x 21.2 mm, 48
 stickers per page For example see
 [here](https://www.lyreco.com/webshop/NONO/etiketter-avery-45-7-x-21-2-mm-hvit-eske-c3a0-960-stk-product-000000000002760191.html).
 
-<img src="R/envelope.png" title="Envelope with a barcode sticker." alt="Envelope with a barcode sticker." width="50%" />
+<div class="figure">
+
+<img src="R/envelope.png" alt="Envelope with a barcode sticker." width="50%" />
+<p class="caption">
+Envelope with a barcode sticker.
+</p>
+
+</div>
 
 Other types and sizes of labels can be used, but the function has to be
 adapted.
