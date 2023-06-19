@@ -11,18 +11,16 @@ LazyData: true
 URL: https://github.com/Plant-Functional-Trait-Course/PFTCFunctions
 Bugs: https://github.com/Plant-Functional-Trait-Course/PFTCFunctions/issues
 Imports: 
-    R.utils,
     dplyr,
     tidyr,
     rlang,
     purrr,
-    readr,
     dataDownloader (>= 0.0.0.9000),
-    baRcodeR,
     glue
 RoxygenNote: 7.2.3
 Depends: R (>= 2.10)
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    baRcodeR
 Remotes: 
     Between-the-Fjords/downloader
