@@ -34,10 +34,11 @@ get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE){
 
 
 #' @title unique envelope codes across seeds
-#' @description Function checking that enveloope codes (hashcodes) are unique across seeds. And it selects away non unique codes.
+#' @description Function checking that envelope codes (hashcodes) are unique across seeds.
+#' It selects away non unique codes.
 #' @param newseed integer newseed value
 #' @param oldseeds integer oldseeds value
-#' @return tibble with IDs
+#' @return tibble with unique IDs
 #' @examples
 #' unique_PFTC_envelope_codes(newseed = 1, oldseeds = 32)
 #' @importFrom dplyr anti_join %>%
@@ -45,7 +46,7 @@ get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE){
 #' @export
 
 
-unique_PFTC_envelope_codes <- function(newseed, oldseeds){
+unique_PFTC_envelope_codes <- function(newseed, oldseeds) {
 
   oldhash <- map_df(oldseeds, get_PFTC_envelope_codes)
   uniqueIDs <- get_PFTC_envelope_codes(newseed) %>%

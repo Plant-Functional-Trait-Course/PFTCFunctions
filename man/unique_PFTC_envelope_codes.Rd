@@ -12,10 +12,11 @@ unique_PFTC_envelope_codes(newseed, oldseeds)
 \item{oldseeds}{integer oldseeds value}
 }
 \value{
-tibble with IDs
+tibble with unique IDs
 }
 \description{
-Function checking that enveloope codes (hashcodes) are unique across seeds. And it selects away non unique codes.
+Function checking that envelope codes (hashcodes) are unique across seeds.
+It selects away non unique codes.
 }
 \examples{
 unique_PFTC_envelope_codes(newseed = 1, oldseeds = 32)
