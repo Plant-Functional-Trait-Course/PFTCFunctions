@@ -4,22 +4,31 @@
 \alias{make_barcode_labels}
 \title{function to make barcode labels and produce a pdf}
 \usage{
-make_barcode_labels(uniqueID, name)
+make_barcode_labels(uniqueID, filename)
 }
 \arguments{
 \item{uniqueID}{tibble with IDs to make the barcode with column header called hashcode}
 
-\item{name}{name of output file}
+\item{filename}{name of output file}
 }
 \value{
 PDF with barcodes from IDs
 }
 \description{
-this function makes barcodes from a column with unique IDs in a dataframe and creates a PDF. The type of labels used is: Avery 4778 and can be ordered here: https://www.lyreco.com/webshop/NONO/etiketter-avery-45-7-x-21-2-mm-hvit-eske-c3a0-960-stk-product-000000000002760191.html
+this function makes barcodes from a column with unique IDs in a dataframe and creates a PDF.
+The type of labels used is: Avery 4778 and can be ordered here:
+https://www.lyreco.com/webshop/NONO/etiketter-avery-45-7-x-21-2-mm-hvit-eske-c3a0-960-stk-product-000000000002760191.html
 }
 \details{
 the uniqueID dataframe can be created using this code \code{unique_PFTC_envelope_codes}
 }
 \examples{
-make_barcode_labels(uniqueID = myIDs, name = "my_labels_PFTC6")
+\dontrun{
+if(require(baRcodeR)) { # needs baRcodeR package installed
+  myIDs <- head(get_PFTC_envelope_codes(seed = 42))
+  file <- tempfile(fileext = ".pdf")
+   make_barcode_labels(uniqueID = myIDs, filename = file)
+   unlink(file)
+}
+}
 }
