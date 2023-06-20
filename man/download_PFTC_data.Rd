@@ -14,5 +14,5 @@ download_PFTC_data(country, datatype, path = ".")
 \item{path}{path for downloaded files}
 }
 \description{
-Function to download PFTC data
+Function to download PFTC data. Needs dataDownloader installed.
 }

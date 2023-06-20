@@ -1,5 +1,5 @@
 #' @title download PFTC data
-#' @description Function to download PFTC data
+#' @description Function to download PFTC data. Needs dataDownloader installed.
 #' @param country name of country
 #' @param datatype name of datatype
 #' @param path path for downloaded files
