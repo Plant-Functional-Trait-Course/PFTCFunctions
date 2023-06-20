@@ -5,7 +5,6 @@
 #' @param path path for downloaded files
 #' @importFrom dplyr filter select %>%
 #' @importFrom purrr pwalk
-#' @importFrom dataDownloader get_file
 #' @importFrom utils data
 #' @export
 
@@ -41,6 +40,6 @@ download_PFTC_data <- function(country, datatype, path = ".") {
       remote_path <- NULL
     }
 
-    get_file(remote_path, ...)
+    dataDownloader::get_file(remote_path, ...)
   }, path = path)
 }
