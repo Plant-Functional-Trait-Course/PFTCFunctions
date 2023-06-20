@@ -3,6 +3,7 @@
 #' @param seed integer Default value for seed
 #' @returns Integer to use as seed
 #' @importFrom glue glue
+#' @export
 
 
 get_seed <- function(seed) {

@@ -2,6 +2,7 @@
 
 export(download_PFTC_data)
 export(get_PFTC_envelope_codes)
+export(get_seed)
 export(make_barcode_labels)
 export(unique_PFTC_envelope_codes)
 importFrom(dataDownloader,get_file)
