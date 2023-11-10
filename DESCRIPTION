@@ -1,7 +1,7 @@
 Package: PFTCFunctions
 Type: Package
 Title: Functions for PFTC Data
-Version: 0.1.1
+Version: 0.1.2
 Author: Aud H. Halbritter [aut, cre]
 Maintainer: Aud H. Halbritter <me@audhalbritter.com>
 Description: This package contains useful functions for the PFTC data analysis. For example creating a unique envelope ID.
@@ -15,8 +15,10 @@ Imports:
     tidyr,
     rlang,
     purrr,
-    glue
+    glue,
+    fs
 RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
 Depends: R (>= 2.10)
 Suggests: 
     testthat (>= 2.1.0),

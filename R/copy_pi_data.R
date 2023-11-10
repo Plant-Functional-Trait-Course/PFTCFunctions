@@ -1,0 +1,86 @@
+#' Copy pi data
+#'
+#' @description
+#' Copy the data from each pi into a separate directory and, optionally, delete the data from the pi
+#'
+#' @param source path to where the files are
+#' @param dest0 path where to move the files to
+#' @param dest1 name of second level of destination path, defaults to the date
+#' @param dest2 name of third level of destination path, defaults to an incrementing integer
+#' @param delete logical to delete source files
+#' @details
+#' Shutdown the pi, then carefully remove its memory card and put into a card reader.
+#' `copy_pi_data()` can copy data from the memory card.
+#' If you don't know the path (including drive name) leave the source argument empty, and `file.choose()` will help you find it and print this information so you can use it next time.
+#' You need to specify where the files will be copied to with `dest0`.
+#' Within this destination directory, `copy_pi_data()` will make a new directory for each date (remember to copy the files before midnight!) (you can override this by supplying your own name to `dest1`).
+#' Data for each pi are copied into a separate sub-folder which are numbered incrementally by default.
+#'
+#' @importFrom fs dir_exists dir_copy file_delete dir_ls dir_create path_abs
+#' @export
+#' @examples
+#'
+#' # make some files
+#' library(fs)
+#' s <- file.path(tempdir(), "source")
+#' dir_create(s)
+#' fs::file_create(path = file.path(s, paste0(letters[1:3], ".csv")))
+#' dir(path = s)
+#'
+#' # make destination
+#' d <-  file.path(tempdir(), "dest")
+#' dir_create(d)
+#'
+#' # use copy_pi_data() to move them to a new directory
+#' copy_pi_data(source = s, dest0 = d)
+#'
+#' dir_tree(d)
+#'
+#' # copy again. This time delete the source files
+#' copy_pi_data(source = s, dest0 = d, delete = TRUE)
+#'
+#' dir_tree(d)
+#' dir_ls(s) # empty
+#'
+#' # clean up
+#' dir_delete(s)
+#' dir_delete(d)
+#'
+
+
+copy_pi_data <- function(source, dest0 = ".", dest1 = as.character(Sys.Date()), dest2, delete = FALSE) {
+  # check source
+  if (missing(source)) {
+    source <- file.choose() |>
+      dirname()
+    cat("Source directory path is: ", source)
+  } else {
+    stopifnot(dir_exists(source))
+  }
+
+  # check dest
+  stopifnot(dir_exists(dest0))
+
+  # make dest1 directory is needed
+  if (!dir_exists(file.path(dest0, dest1))) {
+    dir_create(file.path(dest0, dest1))
+  }
+
+  # make dest2 is needed
+  if (missing(dest2)) {
+      existing_sub <- basename(dir_ls(file.path(dest0, dest1), type = "directory"))
+      dest2 <- max(as.integer(existing_sub), 0, na.rm = TRUE) + 1
+    }
+
+  # copy files
+  dir_copy(source, file.path(dest0, dest1, dest2))
+
+  # delete source files
+  if (isTRUE(delete)) {
+    # list files to move/delete
+    files <- dir_ls(path_abs(source))
+    # delete them
+    file_delete(files)
+  }
+
+}
