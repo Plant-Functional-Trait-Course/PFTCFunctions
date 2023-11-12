@@ -7,12 +7,12 @@
 \format{
 A data frame with 32 rows and 6 variables:
 \describe{
-  \item{Country}{country name}
-  \item{DataType}{data type name}
-  \item{node}{node name}
-  \item{file}{file name}
-  \item{remote_path}{remot path name}
-  \item{Remark}{remark name}
+\item{Country}{country name}
+\item{DataType}{data type name}
+\item{node}{node name}
+\item{file}{file name}
+\item{remote_path}{remot path name}
+\item{Remark}{remark name}
 }
 }
 \usage{
