@@ -51,8 +51,7 @@
 copy_pi_data <- function(source, dest0 = ".", dest1 = as.character(Sys.Date()), dest2, delete = FALSE) {
   # check source
   if (missing(source)) {
-    source <- file.choose() |>
-      dirname()
+    source <- dirname(file.choose())
     cat("Source directory path is: ", source)
   } else {
     stopifnot(dir_exists(source))
