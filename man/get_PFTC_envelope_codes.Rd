@@ -4,10 +4,12 @@
 \alias{get_PFTC_envelope_codes}
 \title{creates unique envelope codes}
 \usage{
-get_PFTC_envelope_codes(seed, as.3.5 = TRUE)
+get_PFTC_envelope_codes(seed, prefix = "", as.3.5 = TRUE)
 }
 \arguments{
 \item{seed}{integer seed value}
+
+\item{prefix}{Project specific prefix. Defaults to an empty string.}
 
 \item{as.3.5}{logical using 3.5 version or not}
 }

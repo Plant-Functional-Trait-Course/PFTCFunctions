@@ -1,6 +1,7 @@
 #' @title creates unique envelope codes
 #' @description Function to create unique hashcodes
 #' @param seed integer seed value
+#' @param prefix Project specific prefix. Defaults to an empty string.
 #' @param as.3.5 logical using 3.5 version or not
 #' @details Peru - PFTC3 and Peru - Puna: seed = 1; Svalbard - PFTC4: seed = 32; Peru - PFTC5 seed = 6, PFTC6 = 49 + as.3.5 = FALSE. Codes are not guaranteed to be unique between the different seeds, unless you use the \code{unique_PFTC_envelope_codes}
 #' @return tibble with IDs
@@ -11,7 +12,7 @@
 #' @importFrom rlang .data
 #' @export
 
-get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE) {
+get_PFTC_envelope_codes <- function(seed, prefix = "", as.3.5 = TRUE) {
   if (getRversion() < "3.6.0") { # default seed mechanism changed in R 3.6.0. We want to use old method for consistency
     set.seed(seed = seed)
   } else if (isFALSE(as.3.5)) { #
@@ -21,7 +22,7 @@ get_PFTC_envelope_codes <- function(seed, as.3.5 = TRUE) {
   }
   all_codes <- crossing(A = LETTERS, B = LETTERS, C = LETTERS) %>%
     mutate(
-      code = paste0(.data$A, .data$B, .data$C),
+      code = paste0(prefix, .data$A, .data$B, .data$C),
       hash = row_number() %% 10000L,
       hash = sample(.data$hash),
       hash = formatC(.data$hash, width = 4, format = "d", flag = "0"),
