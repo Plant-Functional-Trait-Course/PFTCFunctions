@@ -3,6 +3,7 @@
 export(copy_pi_data)
 export(download_PFTC_data)
 export(get_PFTC_envelope_codes)
+export(get_prefix)
 export(get_seed)
 export(make_barcode_labels)
 export(unique_PFTC_envelope_codes)
